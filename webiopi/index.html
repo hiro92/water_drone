@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Water Drone</title>
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <style>
+        .camera {
+            text-align: center;
+        }
+        .now_display {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+        .controller {
+            display: flex;
+            justify-content: space-around;
+        }
+        .forward {
+            margin: 10% 0 10% 20%;
+        }
+        .back {
+            margin: 10% 0 10% 20%;
+        }
+        .UP {
+            margin: 30% 0 20% 0;
+        }
+        .UD_stop {
+            margin: 10% 0 20% 0;
+        }
+        .DOWN {
+            margin: 10% 0 20% 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controller">
+        <div class="left">
+            <div>
+                <h5>現在の前後左右動作<p id="left-now">none</p></h1>
+            </div>
+            <div class="forward">
+                <tr>　</tr>
+                <tr><input type="button" value="forward" onclick="forward()"></tr>
+                <tr>　</tr>
+            </div>
+            <div>
+                <tr>
+                    <td><input type="button" value="left" onclick="left()"></td>
+                    <td><input type="button" value="propeller_stop" onclick="propeller_stop()"></td>
+                    <td><input type="button" value="right" onclick="right()"></td>
+                </tr>
+            </div>
+            <div class="back">
+                <tr>　</tr>
+                <tr><input type="button" value="back" onclick="back()"></tr>
+                <tr>　</tr>
+            </div>
+        </div>
+        <div class="camera">
+            <img src = "http://192.168.43.185:8080/?action=stream">
+        </div>
+        <div class="right">
+            <div>
+                <h5>現在の上下の動作<p id="right-now">none</p></h5>
+            </div>
+            <div class="UP">
+                <tr><input type="button" value="UP" onclick="up()"></tr>
+            </div>
+            <div class="UD_stop">
+                <tr><input type="button" value="UD_stop" onclick="ud_stop()"></tr>
+            </div>
+            <div class="DOWN">
+                <tr><input type="button" value="DOWN" onclick="down()"></tr>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
